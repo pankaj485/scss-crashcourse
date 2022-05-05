@@ -1,0 +1,4 @@
+// loading scss files from the respective partial scss files
+// forward will get the code to this file and sends it to the main file to compile
+@forward "boilerplate";
+@forward "typography";
