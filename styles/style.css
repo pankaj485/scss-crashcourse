@@ -38,4 +38,30 @@ a:active {
 :root {
   --background-color: hsl(0, 0%, 22%);
   --text-color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  width: min(100%, 1000px);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    padding-inline: 0;
+  }
+}
+.grid__main, .grid__sidebar {
+  padding: 40px;
+}
+.grid__main {
+  background-color: hsl(240deg, 100%, 35%);
+}
+.grid__sidebar {
+  background-color: hsl(300deg, 100%, 35%);
 }/*# sourceMappingURL=style.css.map */
