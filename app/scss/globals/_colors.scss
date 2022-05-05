@@ -1,0 +1,7 @@
+// setting up the highest level of selector as root as global variables.
+// can also be used with body or html but root will override the vlaues present on them as well.
+// variables based on specific files can also be used.
+:root {
+  --background-color: hsl(0, 0%, 22%);
+  --text-color: white;
+}
