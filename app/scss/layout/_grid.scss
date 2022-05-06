@@ -1,3 +1,6 @@
+// importing partial file containing mixin
+@use "../util" as u;
+
 // selecting grid parent class
 .grid {
   display: grid;
@@ -5,12 +8,13 @@
   grid-template-rows: auto auto;
   gap: 40px;
   // provides width as smallest value among the value passed. useful in responsive part.
-  width: min(100% -40px, 1000px);
+  width: min(100% - 40px, 1000px);
   // provides margin-left and margin-right properties
   margin-inline: auto;
 
   // the media query is for the .grid only
-  @media (min-width: 900px) {
+  // importing breakpoint-up mixin with namespace
+  @include u.breakpoint-up(large) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
   }
@@ -24,10 +28,28 @@
   // & means parent's name example: .grid in .grid__main
   &__main {
     background-color: hsl(240, 100%, 35%);
+
+    @include u.breakpoint-up(medium) {
+      background-color: rebeccapurple;
+    }
+    @include u.breakpoint-up(large) {
+      background-color: black;
+    }
+    @include u.breakpoint-up(xlarge) {
+      background-color: green;
+    }
   }
 
   // & means parent's name example: .grid in .grid__sidebar
   &__sidebar {
     background-color: hsl(300, 100%, 35%);
+
+    // importing breakpoint-down mixin
+    @include u.breakpoint-down(medium) {
+      text-align: center;
+    }
+
+    @media (max-width: 56.25em) {
+    }
   }
 }

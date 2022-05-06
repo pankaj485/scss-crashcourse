@@ -45,15 +45,13 @@ a:active {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: 40px;
-  width: min(100%, 1000px);
+  width: min(100% - 40px, 1000px);
   margin-inline: auto;
-  padding-inline: 20px;
 }
-@media (min-width: 900px) {
+@media (min-width: 56.25em) {
   .grid {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
-    padding-inline: 0;
   }
 }
 .grid__main, .grid__sidebar {
@@ -62,6 +60,26 @@ a:active {
 .grid__main {
   background-color: hsl(240deg, 100%, 35%);
 }
+@media (min-width: 43.75em) {
+  .grid__main {
+    background-color: rebeccapurple;
+  }
+}
+@media (min-width: 56.25em) {
+  .grid__main {
+    background-color: black;
+  }
+}
+@media (min-width: 90em) {
+  .grid__main {
+    background-color: green;
+  }
+}
 .grid__sidebar {
   background-color: hsl(300deg, 100%, 35%);
+}
+@media (max-width: 43.7485em) {
+  .grid__sidebar {
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */

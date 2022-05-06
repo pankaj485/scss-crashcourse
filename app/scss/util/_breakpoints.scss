@@ -1,0 +1,33 @@
+// breakpoints for min-width: 700px, 900px, 1440px
+// breakpoints for max-width: 699.98px, 899.98px, 1439.98px
+
+// create scss maps
+$breakpoints-up: (
+  "medium": 43.75em,
+  "large": 56.25em,
+  "xlarge": 90em,
+);
+
+$breakpoints-down: (
+  "medium": 43.7485em,
+  "large": 56.24875em,
+  "xlarge": 89.99875em,
+);
+
+// create scss mixin to generate codes inside it's block
+@mixin breakpoint-up($size) {
+  // map-get accepts map and it's key and uses corrosponding vlaue. In our case, it's using values from $breakpoints-up
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    // @content loads the code based on the $size used in actual block of code.
+    @content;
+  }
+}
+
+// create scss mixin to generate codes inside it's block
+@mixin breakpoint-down($size) {
+  // map-get accepts map and it's key and uses corrosponding vlaue. In our case, it's using values from $breakpoints-up
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    // @content loads the code based on the $size used in actual block of code.
+    @content;
+  }
+}
