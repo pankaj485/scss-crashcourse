@@ -42,11 +42,29 @@
 
   // & means parent's name example: .grid in .grid__sidebar
   &__sidebar {
-    background-color: hsl(300, 100%, 35%);
-
     // importing breakpoint-down mixin
     @include u.breakpoint-down(medium) {
       text-align: center;
+    }
+  }
+
+  &__widget {
+    background-color: hsl(300, 97%, 27%);
+    padding: u.rem(16);
+
+    &--green {
+      @extend .grid__widget;
+      background-color: hsl(120, 94%, 20%);
+    }
+
+    &--magenta {
+      @extend .grid__widget;
+      background-color: rgb(161, 1, 161);
+    }
+    // another way to use sibling class then we need to use &.<classname>
+    // example:
+    &.oragne {
+      background-color: rgb(163, 82, 7);
     }
   }
 }

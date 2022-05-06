@@ -84,11 +84,21 @@ a:active {
     background-color: green;
   }
 }
-.grid__sidebar {
-  background-color: hsl(300deg, 100%, 35%);
-}
 @media (max-width: 43.74875em) {
   .grid__sidebar {
     text-align: center;
   }
+}
+.grid__widget, .grid__widget--magenta, .grid__widget--green {
+  background-color: hsl(300deg, 97%, 27%);
+  padding: 1rem;
+}
+.grid__widget--green {
+  background-color: hsl(120deg, 94%, 20%);
+}
+.grid__widget--magenta {
+  background-color: rgb(161, 1, 161);
+}
+.grid__widget.oragne, .oragne.grid__widget--green, .oragne.grid__widget--magenta {
+  background-color: rgb(163, 82, 7);
 }/*# sourceMappingURL=style.css.map */
