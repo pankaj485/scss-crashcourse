@@ -1,0 +1,22 @@
+@use "sass:math";
+
+// usage example: font-size: rem(30);
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    // divide $pixel by 16 to return in rem value considering 16px as 1 rem
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    // else if $pixel has a unit, throw an error
+    @error "please dont't use units while using rem() function; only numbers";
+  }
+}
+
+@function em($pixel) {
+  @if math.is-unitless($pixel) {
+    // divide $pixel by 16 to return in em value considering 16px as 1 em
+    @return math.div($pixel, 16) + em;
+  } @else {
+    // else if $pixel has a unit, throw an error
+    @error "please dont't use units while using rem() function; only numbers";
+  }
+}

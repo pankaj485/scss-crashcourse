@@ -1,17 +1,19 @@
+@use "functions" as f;
+
 // breakpoints for min-width: 700px, 900px, 1440px
 // breakpoints for max-width: 699.98px, 899.98px, 1439.98px
 
 // create scss maps
 $breakpoints-up: (
-  "medium": 43.75em,
-  "large": 56.25em,
-  "xlarge": 90em,
+  "medium": f.em(700),
+  "large": f.em(900),
+  "xlarge": f.em(1440),
 );
 
 $breakpoints-down: (
-  "medium": 43.7485em,
-  "large": 56.24875em,
-  "xlarge": 89.99875em,
+  "medium": f.em(699.98),
+  "large": f.em(899.98),
+  "xlarge": f.em(1439.98),
 );
 
 // create scss mixin to generate codes inside it's block

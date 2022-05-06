@@ -6,9 +6,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
-  gap: 40px;
+  gap: u.rem(40);
   // provides width as smallest value among the value passed. useful in responsive part.
-  width: min(100% - 40px, 1000px);
+  width: min(100% - u.rem(40), u.rem(1000));
   // provides margin-left and margin-right properties
   margin-inline: auto;
 
@@ -22,7 +22,7 @@
   // using compound selector to select both children
   &__main,
   &__sidebar {
-    padding: 40px;
+    padding: u.rem(40);
   }
 
   // & means parent's name example: .grid in .grid__main
@@ -47,9 +47,6 @@
     // importing breakpoint-down mixin
     @include u.breakpoint-down(medium) {
       text-align: center;
-    }
-
-    @media (max-width: 56.25em) {
     }
   }
 }
